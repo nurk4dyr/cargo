@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SelectableView">
+        <attr name="checked" format="boolean" />
+        <attr name="android:background" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="FormattedEditText">
+        <attr name="mask" format="string" />
+        <attr name="maskPlaceholder" format="string" />
+    </declare-styleable>
+</resources>

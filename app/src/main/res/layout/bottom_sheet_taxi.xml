@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:elevation="6dp"
+
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="165dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:background="@drawable/bg_bottom_sheet_drag"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_annon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="12sp"
+            android:text="У вас осталось 243 бонусных баллов"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="15dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:elevation="4dp"
+            android:background="@drawable/bg_darker_area"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_user_location"/>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                app:shimmer_duration="500">
+
+                <TextView
+                    android:id="@+id/addressFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="14sp"
+                    android:text="Определяем адрес"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:elevation="4dp"
+            android:clickable="true"
+            android:background="@drawable/bg_darker_area"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_route"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter_bold"
+                android:text="Куда поедете?"
+                android:textSize="16sp"
+                android:layout_marginStart="30dp"
+                android:alpha="0.5"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="15dp"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="Выберите тариф"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"/>
+
+            <kz.carveo.mvvm.ui.custom.SelectableGroup
+                android:id="@+id/plan_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <kz.carveo.mvvm.ui.custom.SelectableView
+                    android:id="@+id/plan_eco"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="4dp"
+                    android:background="@drawable/bg_plan_selector"
+                    app:checked="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Эконом"
+                        android:textSize="17sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="890тг"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:src="@drawable/car_econom"
+                        android:layout_alignParentEnd="true"/>
+
+                </kz.carveo.mvvm.ui.custom.SelectableView>
+
+                <kz.carveo.mvvm.ui.custom.SelectableView
+                    android:id="@+id/plan_comfort"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:elevation="4dp"
+                    android:background="@drawable/bg_plan_selector">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Комфорт"
+                        android:textSize="17sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1890тг"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:src="@drawable/car_comfort"
+                        android:layout_alignParentEnd="true"/>
+
+                </kz.carveo.mvvm.ui.custom.SelectableView>
+
+            </kz.carveo.mvvm.ui.custom.SelectableGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="Выберите способ оплаты"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"/>
+
+            <kz.carveo.mvvm.ui.custom.SelectableGroup
+                android:id="@+id/price_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <kz.carveo.mvvm.ui.custom.SelectableView
+                    android:id="@+id/price_cash"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="0.5"
+                    android:layout_marginEnd="10dp"
+                    android:elevation="4dp"
+                    app:checked="true"
+                    android:background="@drawable/bg_plan_selector">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_banknote"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Наличными"
+                        android:fontFamily="@font/inter_bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentBottom="true"/>
+
+                </kz.carveo.mvvm.ui.custom.SelectableView>
+
+                <kz.carveo.mvvm.ui.custom.SelectableView
+                    android:id="@+id/price_paycode"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="0.5"
+                    android:elevation="4dp"
+                    android:background="@drawable/bg_plan_selector">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_qr_code"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PayCode*"
+                        android:fontFamily="@font/inter_bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentBottom="true"/>
+
+                </kz.carveo.mvvm.ui.custom.SelectableView>
+
+            </kz.carveo.mvvm.ui.custom.SelectableGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*Начисляется бонусы за каждую поездку"
+                android:layout_marginTop="10dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_taxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Поиск"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_main_button"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
